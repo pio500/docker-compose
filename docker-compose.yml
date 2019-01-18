@@ -36,6 +36,8 @@ services:
       - -c
       - |
         /wait-for-it.sh postgres:5432 -t 10
+        rm -rf django_for_docker-compose
+        git clone https://github.com/pio500/django_for_docker-compose.git
         python ./django_for_docker-compose/manage.py migrate
         python ./django_for_docker-compose/manage.py runserver 0:8000
     # stdin_open: true
