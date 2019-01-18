@@ -10,7 +10,7 @@ services:
       - django_sample_db_dev:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=sampledb
-      - POSTGRES_USER=sampleuser
+      - POSTGRES_USER=${user}
       - POSTGRES_PASSWORD=samplesecret
 
   django:
